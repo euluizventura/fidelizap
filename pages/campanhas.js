@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import GlassCard from '../components/GlassCard'
 import { fetchAPI, postAPI } from '../lib/api'
@@ -29,6 +30,7 @@ export default function Campanhas() {
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [step, setStep] = useState(0)
+  const router = useRouter()
   const [selSeg, setSelSeg] = useState('Dormentes')
   const [selSug, setSelSug] = useState(0)
   const [dataEnvio, setDataEnvio] = useState('')
