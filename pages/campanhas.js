@@ -36,7 +36,7 @@ export default function Campanhas() {
   const [saving, setSaving] = useState(false)
   const [toast, setToast] = useState('')
 
-  useEffect(() => { loadCampanhas() }, [])
+  useEffect(() => { loadCampanhas(); const h=()=>setShowModal(true); window.addEventListener("openNovaCampanha",h); return ()=>window.removeEventListener("openNovaCampanha",h) }, [])
 
   async function loadCampanhas() {
     setLoading(true)
